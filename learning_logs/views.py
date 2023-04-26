@@ -9,6 +9,7 @@ def index(request):
     """The home page for the Learning Log."""
     return render(request, 'learning_logs/index.html')
 
+@login_required
 def topics(request):
     """Show all topics."""
     topics = Topic.objects.order_by('date_added')
